@@ -9,8 +9,8 @@ using SalesWebMvc.Data;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20221029183550_OtherEntities")]
-    partial class OtherEntities
+    [Migration("20221029205725_ChanngingIds")]
+    partial class ChanngingIds
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
