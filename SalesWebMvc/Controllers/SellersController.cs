@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 
 namespace SalesWebMvc.Controllers
@@ -17,6 +18,20 @@ namespace SalesWebMvc.Controllers
         {
             var sellersList = _sellerService.FindlAll(); 
             return View(sellersList);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //adding new seller
+        [HttpPost] //to send post requisition
+        [ValidateAntiForgeryToken] //antihack?
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
