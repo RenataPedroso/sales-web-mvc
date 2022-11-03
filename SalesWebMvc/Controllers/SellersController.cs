@@ -2,8 +2,11 @@
 using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using SalesWebMvc.Models.ViewModels;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using SalesWebMvc.Services.Exceptions;
+=======
+>>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
 
 namespace SalesWebMvc.Controllers
 {
@@ -40,6 +43,7 @@ namespace SalesWebMvc.Controllers
             _sellerService.Insert(seller);
             return RedirectToAction(nameof(Index));
         }
+<<<<<<< HEAD
 
         public IActionResult Delete(int? id)
         {
@@ -129,5 +133,7 @@ namespace SalesWebMvc.Controllers
 >>>>>>> parent of b3a7678 (Seller details and eager loading)
 =======
 >>>>>>> parent of b3a7678 (Seller details and eager loading)
+=======
+>>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
     }
 }
