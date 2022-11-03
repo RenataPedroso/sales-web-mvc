@@ -3,8 +3,11 @@ using SalesWebMvc.Models;
 using System.Collections.Generic;
 using System.Linq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Services.Exceptions;
+=======
+>>>>>>> parent of b3a7678 (Seller details and eager loading)
 =======
 >>>>>>> parent of b3a7678 (Seller details and eager loading)
 

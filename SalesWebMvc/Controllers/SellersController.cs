@@ -65,6 +65,7 @@ namespace SalesWebMvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         public IActionResult Details(int? id)
         {
@@ -124,6 +125,8 @@ namespace SalesWebMvc.Controllers
                 return BadRequest();
             }
         }
+=======
+>>>>>>> parent of b3a7678 (Seller details and eager loading)
 =======
 >>>>>>> parent of b3a7678 (Seller details and eager loading)
     }
