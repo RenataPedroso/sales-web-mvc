@@ -20,7 +20,7 @@ namespace SalesWebMvc.Services
             return _context.Seller.ToList();
         }
 
-        //adding object in db
+        //adding object in db ç~;ç~;ç~;ç
         public void Insert(Seller obj)
         {
             _context.Add(obj);
