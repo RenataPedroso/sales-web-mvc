@@ -1,18 +1,9 @@
-﻿using SalesWebMvc.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Data;
 using SalesWebMvc.Models;
+using SalesWebMvc.Services.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-using Microsoft.EntityFrameworkCore;
-using SalesWebMvc.Services.Exceptions;
-=======
->>>>>>> parent of b3a7678 (Seller details and eager loading)
-=======
->>>>>>> parent of b3a7678 (Seller details and eager loading)
-=======
->>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
 
 namespace SalesWebMvc.Services
 {
@@ -37,12 +28,12 @@ namespace SalesWebMvc.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
-<<<<<<< HEAD
 
         public Seller FindById(int id)
         {
-            return _context.Seller.FirstOrDefault(s => s.Id == id);
+            return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
         }
+
         public void Remove(int id)
         {
             var obj = _context.Seller.Find(id);
@@ -52,11 +43,10 @@ namespace SalesWebMvc.Services
 
         public void Update(Seller obj)
         {
-            if(!_context.Seller.Any(s => s.Id == obj.Id))
+            if (!_context.Seller.Any(x => x.Id == obj.Id))
             {
-                throw new NotFoundException("Id not found");
+                throw new KeyNotFoundException("Id not found :/");
             }
-
             try
             {
                 _context.Update(obj);
@@ -67,7 +57,5 @@ namespace SalesWebMvc.Services
                 throw new DbConcurrencyException(e.Message);
             }
         }
-=======
->>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
     }
 }

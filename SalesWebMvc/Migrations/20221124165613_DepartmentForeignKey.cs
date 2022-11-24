@@ -2,7 +2,7 @@
 
 namespace SalesWebMvc.Migrations
 {
-    public partial class DepartmentsForeignKey : Migration
+    public partial class DepartmentForeignKey : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

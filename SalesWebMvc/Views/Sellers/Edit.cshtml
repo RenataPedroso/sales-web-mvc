@@ -1,5 +1,8 @@
 ﻿@model SalesWebMvc.Models.ViewModels.SellerFormViewModel
 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
     ViewData["Title"] = "Edit";
 }
@@ -33,7 +36,7 @@
                  <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id", "Name"))" class="form-control"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>

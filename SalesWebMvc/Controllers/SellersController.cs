@@ -2,11 +2,8 @@
 using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using SalesWebMvc.Models.ViewModels;
-<<<<<<< HEAD
 using System.Collections.Generic;
 using SalesWebMvc.Services.Exceptions;
-=======
->>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
 
 namespace SalesWebMvc.Controllers
 {
@@ -43,7 +40,6 @@ namespace SalesWebMvc.Controllers
             _sellerService.Insert(seller);
             return RedirectToAction(nameof(Index));
         }
-<<<<<<< HEAD
 
         public IActionResult Delete(int? id)
         {
@@ -53,6 +49,7 @@ namespace SalesWebMvc.Controllers
             }
 
             var obj = _sellerService.FindById(id.Value);
+            
             if(obj == null)
             {
                 return NotFound();
@@ -68,8 +65,6 @@ namespace SalesWebMvc.Controllers
             _sellerService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         public IActionResult Details(int? id)
         {
@@ -79,6 +74,7 @@ namespace SalesWebMvc.Controllers
             }
 
             var obj = _sellerService.FindById(id.Value);
+
             if (obj == null)
             {
                 return NotFound();
@@ -101,8 +97,9 @@ namespace SalesWebMvc.Controllers
             }
 
             List<Department> departments = _departmentService.FindAll();
-            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj, Departments = departments };
 
+            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj, Departments = departments };
+        
             return View(viewModel);
         }
 
@@ -120,20 +117,14 @@ namespace SalesWebMvc.Controllers
                 _sellerService.Update(seller);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundException)
+            catch (NotFoundException e)
             {
                 return NotFound();
             }
-            catch (DbConcurrencyException)
+            catch(DbConcurrencyException d)
             {
                 return BadRequest();
             }
         }
-=======
->>>>>>> parent of b3a7678 (Seller details and eager loading)
-=======
->>>>>>> parent of b3a7678 (Seller details and eager loading)
-=======
->>>>>>> 83b55f653ba601e95554f82ad00df5e45c0efc02
     }
 }
